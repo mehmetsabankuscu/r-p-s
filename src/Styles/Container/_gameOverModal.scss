@@ -1,0 +1,78 @@
+.game-over-modal {
+  display: none;
+
+  &__container {
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    height: 250px;
+    background-color: $first-color;
+    border-radius: 1rem;
+    @include flexbox($direction: column);
+  }
+
+  &__inner {
+    @include flexbox($direction: column);
+    height: 100%;
+    row-gap: 1rem;
+  }
+  &__title {
+    width: 100%;
+    font-weight: $font-bold;
+    font-size: $bigger-font-size;
+    color: $white;
+    @include flexbox($justify: space-around);
+  }
+
+  &__message {
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: $medium-font-size;
+    color: $white;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: $white;
+    transition: 0.3s all;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &--show {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: $tooltip;
+    width: 100%;
+    height: 100vh;
+    @include flexbox();
+  }
+
+  @media screen and (max-width: $small-screen) {
+
+    &__title{
+        font-size: $big-font-size;
+    }
+
+    &__message{
+        font-size: $normal-font-size;
+    }
+
+    &__container {
+      height: 150px;
+    }
+
+    &__icon{
+        font-size: 2rem;
+    }
+  }
+}

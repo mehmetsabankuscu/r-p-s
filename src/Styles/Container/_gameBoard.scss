@@ -1,0 +1,17 @@
+@import '../Config/variables';
+
+
+.game-board{
+   width: 100%;
+
+   @media screen and (min-width: $medium-screen){
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      column-gap: 1.5rem;
+      
+   }
+   
+}
+
+
+

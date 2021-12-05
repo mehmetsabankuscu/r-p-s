@@ -1,0 +1,57 @@
+@import '../Config/variables';
+@import '../Abstracts/mixins';
+
+.choice-board{
+    height: 100%;
+
+    &__container{
+        @include flexbox($direction: column);
+        row-gap: 1rem;
+    }
+
+    &__img{
+        width: 6rem;
+        transition: .5s all;
+
+        &--cursor{
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__player{
+        font-size: $big-font-size;
+        color: $white;
+    }
+
+    &__computer{
+        font-size: $big-font-size;
+        margin-bottom: 0.5rem;
+        color: $white;
+    }
+
+    &__computer-choice{
+        @include flexbox($direction: column);
+        height: 96px;
+        width: 96px;
+    }
+
+    &__player-choice{
+        @include flexbox($direction: column);
+
+    }
+
+
+    @media screen and (min-width: $small-screen){
+        &__img{
+            width: 8rem;
+        }
+    }
+
+
+    @media screen and (min-width: $medium-screen){
+        height: 450px;
+    }
+}

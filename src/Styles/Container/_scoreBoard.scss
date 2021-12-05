@@ -1,0 +1,76 @@
+@import '../Abstracts/mixins';
+@import '../Config/variables';
+
+.score-board {
+  width: 100%;
+/*   box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75); */
+  @include flexbox();
+
+  &__container{
+    @include flexbox($justify: space-around);
+    border: 1px solid $white;
+    border-radius: 1.25rem;
+    width: 90%;
+    padding: .25rem;
+    height: $score-board-height;
+      
+  }
+
+  &__title{
+    @include flexbox($direction: column, $align: flex-start);
+    font-size: $medium-font-size;
+    span{
+      color: $first-color;
+      font-weight: $font-semi-bold;
+    }
+  }
+
+  &__score{
+    @include flexbox($direction: column);
+    row-gap: .25rem;
+
+
+
+    &-title{
+      color: $first-color;
+    }
+
+  }
+
+  &__score-point{
+      font-size: 2rem;
+      font-weight: $font-semi-bold;
+      color: $white;
+      width: 2rem;
+      text-align: center;
+      border-radius: .5rem;
+  }
+
+  @media screen and (min-width: $medium-screen){
+        &__container{
+            width: 80%;
+            height: 12rem;
+        }
+
+        &__span{
+          font-size: 2.5rem;
+        }
+
+        &__score-title{
+          font-size: $bigger-font-size;
+        }
+
+        &__score-point{
+          width: 4rem;
+          font-size: $bigger-font-size;
+        }
+    }
+
+    @media screen and (min-width: $large-screen){
+        &__container{
+            width: 50%;
+        }
+    }
+    
+}
+
